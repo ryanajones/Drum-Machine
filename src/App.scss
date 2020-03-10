@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+$color1: #c5c5c5;
+$color2: #9a9a9a;
+$color3: #f2ecff;
+$color4: #4b4b4b;
+$color5: #282828;
+$color6: #193baa;
+$color7: black;
+
+* {
+  box-sizing: border-box;
+  font-family: 'Russo One', Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+
+html {
+  background-color: $color4;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+#drum-machine {
+  width: 700px;
+  height: 400px;
+  box-shadow: 0 0 0 20px $color5;
+  background-color: $color2;
+  font-size: 20px;
+  cursor: pointer;
+
+  #title-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+    background-color: $color4;
+
+    #title {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 600px;
+      height: 100%;
+      border-radius: 50px;
+      color: $color5;
+      background-color: $color3;
+      font-size: 25px;
+
+      #triangle-container {
+        position: relative;
+
+        .triangle {
+          width: 0;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          border-bottom: 20px solid $color5;
+        }
+
+        #triangle-top {
+          position: relative;
+          left: 20px;
+        }
+
+        .triangle-bottom-set {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  #components-wrapper {
+    @extend .grid-basics;
+    grid-template-columns: 65% 35%;
+    padding: 40px;
+    height: 90%;
+
+    #pad-bank-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 5%;
+      padding: 3%;
+      height: 90%;
+
+      .drum-pad {
+        @extend .grid-basics;
+        transition: all 0.07s;
+        border-radius: 5px;
+        color: $color5;
+      }
+    }
+
+    #controls-container {
+      @extend .grid-basics;
+      height: 100%;
+      background-color: inherit;
+
+      #power {
+        @extend .control-switch;
+      }
+
+      .control-switch {
+        @extend .grid-basics;
+        margin: auto;
+        width: 70px;
+
+        p {
+          margin: auto;
+          color: $color5;
+          font-size: 15px;
+          user-select: none;
+        }
+
+        label {
+          position: relative;
+          display: inline-block;
+          left: 3px;
+          margin: auto;
+          width: 60px;
+          height: 20px;
+
+          input {
+            width: 0;
+            height: 0;
+            opacity: 0;
+          }
+
+          span {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 4px;
+            bottom: 0;
+            border-radius: 34px;
+            background-color: $color3;
+            transition: .4s;
+          }
+
+          span:before {
+            position: absolute;
+            left: 2px;
+            bottom: 2.0px;
+            content: '';
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: $color5;
+            transition: .4s;
+          }
+
+          input:checked + span {
+            background-color: $color6;
+          }
+
+          input:checked + span:before {
+            transform: translateX(36px);
+          }
+        }
+      }
+
+      #volume {
+        @extend .grid-basics;
+
+        p {
+          margin: auto;
+          color: $color5;
+          font-size: 16px;
+        }
+
+        .volumeSlider {
+          appearance: none;
+          width: 140px;
+          height: 20px;
+          border-radius: 15px;
+          outline: none;
+          background-color: $color3;
+        }
+
+        [type=range] {
+          -webkit-appearance: none;
+        }
+
+        input::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 16px;
+          height: 16px;
+          border-radius: 15px;
+          background: $color5;
+          cursor: pointer;
+        }
+
+        input::-moz-range-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 16px;
+          height: 16px;
+          border-radius: 15px;
+          background: $color5;
+          cursor: pointer;
+        }
+      }
+
+      #selectSet {
+        @extend .control-switch;
+
+        label {
+          input:checked + span {
+            background-color: $color3;
+          }
+        }
+      }
+
+      #display {
+        @extend .grid-basics;
+        width: 150px;
+        height: 40px;
+        border-radius: 5px;
+        color: $color5;
+        background-color: $color3;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.grid-basics {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
