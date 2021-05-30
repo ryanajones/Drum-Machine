@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DrumPad } from './DrumPad';
 
-export class PadBank extends React.Component {
+export class PadBank extends Component {
   render() {
     const { currentPadBank, updateDisplay, power } = this.props;
     let padBank;
@@ -13,7 +13,7 @@ export class PadBank extends React.Component {
           key={i}
           keyCode={currentPad[i].keyCode}
           keyLetter={currentPad[i].keyLetter}
-          keyClip={currentPad[i].keyClip}
+          keyClip={currentPad[i].keyClipconsole.log()}
           updateDisplay={updateDisplay}
           power={power}
         />

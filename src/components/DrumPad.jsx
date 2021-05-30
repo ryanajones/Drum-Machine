@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const activeStyle = {
@@ -11,7 +11,7 @@ const inactiveStyle = {
   backgroundColor: '#F2ECFF',
 };
 
-export class DrumPad extends React.Component {
+export class DrumPad extends Component {
   constructor(props) {
     super(props);
     this.state = {
