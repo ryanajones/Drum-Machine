@@ -1,10 +1,10 @@
 # Drum Machine
 
-This is a freecodecamp front-end framework project using create-react-app. This app is a drum machine where you can click or use your keyboard to make drum and other music sounds.
+> This is a drum machine web application that has both clickable and keyboard button press functionality to make different drum sounds. Other interface abilities include a power on/off button, volume control slider, kit change button for different sounds, and a section to display which sound was played last. The Reactjs library is used for its virtual DOM and state management abilities to improve efficiency.
 
 ## CodePen Link
 
-https://codepen.io/ryanajones/full/GRJZWoaw
+https://codepen.io/ryanajones/full/GRJZWoa
 
 ## Screenshot
 
