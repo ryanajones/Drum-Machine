@@ -1,6 +1,6 @@
 # Drum Machine
 
-> This is a drum machine web application with both clickable and keyboard button press functionality to make different drum sounds. Other interface abilities include a power on/off button, volume control slider, kit change button for different sounds, and a section to display which sound was played last. React's virtual DOM and state management abilities are used to help store current settings of the interface and help fluidly display them to the UI.
+A drum machine web application with clickable and keyboard button press functionality to make drum sounds. Other interface abilities include a power button, volume control, kit change button for different sounds, and a section to display which sound was played last. React's virtual DOM and state management abilities are used to store current settings and fluidly display them to the UI.
 
 ## Technologies Used
 
